@@ -1,0 +1,22 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: infosystem-frontend
+    environment:
+      - NODE_ENV=${APP_ENV:-development}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: infosystem-backend
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
