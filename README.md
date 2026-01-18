@@ -8,7 +8,7 @@
 docker compose up -d
 ```
 
-The frontend will be available at `http://localhost:3000` and the backend at `http://localhost:8000`
+The frontend will be available at `http://localhost:3000`
 
 ### Without docker
 
