@@ -16,7 +16,7 @@ export function VideoCard({
     }
     if (source_type === "REMOTE" && meta.external_id) {
       if (meta.provider === "youtube") {
-        return `https://img.youtube.com/vi/${meta.external_id}/default.jpg`
+        return `https://img.youtube.com/vi/${meta.external_id}/maxresdefault.jpg`
       }
       if (meta.provider === "vimeo") {
         return `https://vumbnail.com/${meta.external_id}.jpg`

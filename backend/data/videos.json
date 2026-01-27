@@ -1,0 +1,72 @@
+[
+  {
+    "id": "me-at-the-zoo",
+    "title": "Me at the zoo",
+    "description": "The historic first-ever video uploaded to YouTube by co-founder Jawed Karim at the San Diego Zoo",
+    "type": "youtube",
+    "src": "jNQXAC9IVRw"
+  },
+  {
+    "id": "big-buck-bunny-4k",
+    "title": "Big Buck Bunny",
+    "description": "A classic open-source animated comedy about a giant rabbit taking revenge on three bullying rodents",
+    "type": "youtube",
+    "src": "aqz-KE-bpKQ"
+  },
+  {
+    "id": "lofi-girl-synthwave-mix",
+    "title": "Synthwave Radio",
+    "description": "A continuous stream of retro-futuristic synthwave beats perfect for gaming, coding, or relaxing",
+    "type": "youtube",
+    "src": "MVPTGNGiI-4"
+  },
+  {
+    "id": "rick-roll",
+    "title": "Rick Astley - Never Gonna Give You Up",
+    "description": "The quintessential 80s music video that sparked the legendary 'Rickroll' internet meme",
+    "type": "youtube",
+    "src": "dQw4w9WgXcQ"
+  },
+  {
+    "id": "fireplace-10-hours",
+    "title": "Crackling Fireplace",
+    "description": "A cozy, high-definition loop of a crackling wood fire, ideal for creating a warm ambiance",
+    "type": "youtube",
+    "src": "L_LUpnjgPso"
+  },
+  {
+    "id": "kurzgesagt-immune-system",
+    "title": "The Immune System Explained",
+    "description": "A beautifully animated deep dive into how your body fights off bacteria and viruses",
+    "type": "youtube",
+    "src": "zQGOcOUBi6s"
+  },
+  {
+    "id": "ted-talk-procrastination",
+    "title": "Inside the mind of a master procrastinator",
+    "description": "Tim Urban's hilarious and relatable TED talk about the 'Instant Gratification Monkey' inside our heads",
+    "type": "youtube",
+    "src": "arj7oStGLkU"
+  },
+  {
+    "id": "nature-costa-rica-4k",
+    "title": "Costa Rica in 4K",
+    "description": "Breathtaking 4K footage of Costa Rica's wildlife, from sloths to snakes, in vivid detail",
+    "type": "youtube",
+    "src": "iNJdPyoqt8U"
+  },
+  {
+    "id": "fireship-nextjs-13",
+    "title": "Next.js 13 in 100 Seconds",
+    "description": "A rapid-fire technical overview of the major features introduced in Next.js 13",
+    "type": "youtube",
+    "src": "vn3tm0quoqE"
+  },
+  {
+    "id": "cyberpunk-ambience-1h",
+    "title": "Cyberpunk City Ambience",
+    "description": "Immersive futuristic cityscape visuals with rain and neon lights for focus or sleep",
+    "type": "youtube",
+    "src": "P1IcaBNhDhc"
+  }
+]

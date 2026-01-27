@@ -4,11 +4,10 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'placebear.com',
-        port: '',
-        pathname: '/g/200/200',
-        search: '',
+        protocol: "https",
+        hostname: "img.youtube.com",
+        port: "",
+        pathname: "/**",
       },
     ],
   },
