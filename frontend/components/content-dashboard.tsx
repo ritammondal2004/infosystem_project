@@ -31,7 +31,7 @@ export default function ContentDashboard() {
   }, [])
 
   return (
-    <div className="m-4">
+    <div className="w-full p-4">
       {loading && (
         <div className="flex items-center justify-center h-64">
           <p className="text-muted-foreground">Loading content...</p>
@@ -49,7 +49,7 @@ export default function ContentDashboard() {
       )}
 
       {!loading && videos.length > 0 && (
-        <div className="flex flex-row flex-wrap">
+        <div className="flex flex-row flex-wrap justify-center gap-8">
           {videos.map((video) => (
             <VideoCard
               key={video.id}

@@ -1,72 +1,65 @@
 [
   {
-    "id": "me-at-the-zoo",
-    "title": "Me at the zoo",
-    "description": "The historic first-ever video uploaded to YouTube by co-founder Jawed Karim at the San Diego Zoo",
+    "id": "crash-course-cs-1",
+    "title": "Early Computing: Crash Course Computer Science",
+    "description": "Trace the origins of computing from the abacus to the Babbage Engine in this fast-paced history lesson",
     "type": "youtube",
-    "src": "jNQXAC9IVRw"
+    "src": "tpIctyqH29Q"
   },
   {
-    "id": "big-buck-bunny-4k",
-    "title": "Big Buck Bunny",
-    "description": "A classic open-source animated comedy about a giant rabbit taking revenge on three bullying rodents",
+    "id": "mit-algorithms-1",
+    "title": "MIT 6.006: Introduction to Algorithms",
+    "description": "The introductory lecture to MIT's famous algorithms course, covering analysis and big O notation",
     "type": "youtube",
-    "src": "aqz-KE-bpKQ"
+    "src": "HtSuA80QTyo"
   },
   {
-    "id": "lofi-girl-synthwave-mix",
-    "title": "Synthwave Radio",
-    "description": "A continuous stream of retro-futuristic synthwave beats perfect for gaming, coding, or relaxing",
+    "id": "python-beginners-course",
+    "title": "Learn Python - Full Course for Beginners",
+    "description": "A comprehensive 4-hour course from freeCodeCamp covering everything you need to start programming in Python",
     "type": "youtube",
-    "src": "MVPTGNGiI-4"
+    "src": "rfscVS0vtbw"
   },
   {
-    "id": "rick-roll",
-    "title": "Rick Astley - Never Gonna Give You Up",
-    "description": "The quintessential 80s music video that sparked the legendary 'Rickroll' internet meme",
+    "id": "3b1b-calculus-1",
+    "title": "The Essence of Calculus",
+    "description": "A visual and intuitive introduction to the core ideas of calculus, starting with the area of a circle",
     "type": "youtube",
-    "src": "dQw4w9WgXcQ"
+    "src": "WUvTyaaNkzM"
   },
   {
-    "id": "fireplace-10-hours",
-    "title": "Crackling Fireplace",
-    "description": "A cozy, high-definition loop of a crackling wood fire, ideal for creating a warm ambiance",
+    "id": "study-less-study-smart",
+    "title": "Study Less Study Smart",
+    "description": "Psychology professor Marty Lobdell shares evidence-based techniques to study more effectively",
     "type": "youtube",
-    "src": "L_LUpnjgPso"
+    "src": "IlU-zDU6aQ0"
   },
   {
-    "id": "kurzgesagt-immune-system",
-    "title": "The Immune System Explained",
-    "description": "A beautifully animated deep dive into how your body fights off bacteria and viruses",
+    "id": "stanford-biology-1",
+    "title": "Introduction to Human Behavioral Biology",
+    "description": "Robert Sapolsky's legendary introduction to the biology of human behavior and chaos theory",
     "type": "youtube",
-    "src": "zQGOcOUBi6s"
+    "src": "NNnIGh9g6fA"
   },
   {
-    "id": "ted-talk-procrastination",
-    "title": "Inside the mind of a master procrastinator",
-    "description": "Tim Urban's hilarious and relatable TED talk about the 'Instant Gratification Monkey' inside our heads",
+    "id": "crash-course-history-1",
+    "title": "The Agricultural Revolution",
+    "description": "John Green explores how the invention of agriculture changed human history forever",
     "type": "youtube",
-    "src": "arj7oStGLkU"
+    "src": "Yocja_N5s1I"
   },
   {
-    "id": "nature-costa-rica-4k",
-    "title": "Costa Rica in 4K",
-    "description": "Breathtaking 4K footage of Costa Rica's wildlife, from sloths to snakes, in vivid detail",
+    "id": "kurzgesagt-fermi",
+    "title": "The Fermi Paradox",
+    "description": "An animated exploration of the probability of alien life and why we haven't found them yet",
     "type": "youtube",
-    "src": "iNJdPyoqt8U"
+    "src": "sNhhvQGsMEc"
   },
   {
-    "id": "fireship-nextjs-13",
-    "title": "Next.js 13 in 100 Seconds",
-    "description": "A rapid-fire technical overview of the major features introduced in Next.js 13",
+    "id": "domino-computer",
+    "title": "The 10,000 Domino Computer",
+    "description": "Building a working computer out of 10,000 dominoes to demonstrate how binary logic works physically",
     "type": "youtube",
-    "src": "vn3tm0quoqE"
-  },
-  {
-    "id": "cyberpunk-ambience-1h",
-    "title": "Cyberpunk City Ambience",
-    "description": "Immersive futuristic cityscape visuals with rain and neon lights for focus or sleep",
-    "type": "youtube",
-    "src": "P1IcaBNhDhc"
+    "src": "OpLU__bhu2w"
   }
 ]

@@ -16,7 +16,7 @@ export function VideoCard({
     }
     if (source_type === "REMOTE" && meta.external_id) {
       if (meta.provider === "youtube") {
-        return `https://img.youtube.com/vi/${meta.external_id}/maxresdefault.jpg`
+        return `https://img.youtube.com/vi/${meta.external_id}/hqdefault.jpg`
       }
       if (meta.provider === "vimeo") {
         return `https://vumbnail.com/${meta.external_id}.jpg`
@@ -29,10 +29,10 @@ export function VideoCard({
   const handleClick = () => {}
 
   return (
-    <Card className="w-80 p-0 overflow-hidden hover:shadow-md group m-4 cursor-pointer" onClick={handleClick}>
+    <Card className="w-80 p-0 overflow-hidden hover:shadow-md group cursor-pointer" onClick={handleClick}>
       <CardContent className="p-0 relative">
         <div className="relative aspect-video overflow-hidden bg-muted">
-          <Image src={getThumbnail()} alt={title} fill className="object-contain" />
+          <Image src={getThumbnail()} alt={title} fill className="object-cover" />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 flex items-center justify-center">
             <Play className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 fill-white" />
           </div>
