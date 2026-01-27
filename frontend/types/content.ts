@@ -10,4 +10,7 @@ export interface VideoMeta {
     provider?: string
     external_id?: string
     thumbnail_url?: string
+    embed_url?: string
+    cdn_url?: string
+    mime_type?: string
 }

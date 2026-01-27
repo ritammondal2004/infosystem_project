@@ -38,7 +38,7 @@ def format_video(video_data):
         meta = {
             "external_id": video_data.get('src'),
             "provider": "youtube",
-            # "embed_url": f"https://www.youtube.com/embed/{video_data.get('src')}"
+            "embed_url": f"https://www.youtube.com/embed/{video_data.get('src')}"
         }
 
     return {
@@ -54,6 +54,14 @@ def get_videos():
     raw_videos = load_videos_from_json()
     formatted_videos = [format_video(v) for v in raw_videos]
     return jsonify(formatted_videos)
+
+@app.route('/api/videos/<video_id>', methods=['GET'])
+def get_video(video_id):
+    raw_videos = load_videos_from_json()
+    for video in raw_videos:
+        if video.get('id') == video_id:
+            return jsonify(format_video(video))
+    return jsonify({"error": "Video not found"}), 404
 
 if __name__ == "__main__":
     # Disable debug mode in prod

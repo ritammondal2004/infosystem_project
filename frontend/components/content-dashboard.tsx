@@ -34,7 +34,7 @@ export default function ContentDashboard() {
     <div className="w-full p-4">
       {loading && (
         <div className="flex items-center justify-center h-64">
-          <p className="text-muted-foreground">Loading content...</p>
+          <p className="text-muted-foreground font-semibold">Loading content...</p>
         </div>
       )}
 
