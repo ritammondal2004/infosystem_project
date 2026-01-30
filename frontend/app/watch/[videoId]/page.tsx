@@ -160,7 +160,7 @@ export default function WatchPage() {
 
       {state.status === "IDLE" && (
         <div className="flex-1 w-full flex flex-col items-center justify-center space-y-6 p-80">
-          <h1 className="text-3xl font-extrabold">Ready to Start?</h1>
+          <h1 className="text-3xl font-bold">Ready to Start?</h1>
           <p className="text-muted-foreground max-w-md text-center font-medium">
             This session requires fullscreen mode for accurate eye tracking.
             Please sit comfortably and ensure your face is well-lit.
@@ -204,8 +204,12 @@ export default function WatchPage() {
 
       {/* {viewState === "SUMMARY" && ()} */}
 
+      {showReentryDialog && (
+        <div className="fixed inset-0 z-[999] bg-background/20 backdrop-blur-md transition-all duration-100 animate-in fade-in" />
+      )}
+
       <AlertDialog open={showReentryDialog}>
-        <AlertDialogContent>
+        <AlertDialogContent className="z-[1000]">
           <AlertDialogHeader>
             <AlertDialogTitle>
               <div className="font-extrabold">Fullscreen Paused</div>
