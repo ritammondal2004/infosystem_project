@@ -1,72 +1,65 @@
 [
   {
-    "id": "me-at-the-zoo",
-    "title": "Me at the zoo",
-    "description": "The historic first-ever video uploaded to YouTube by co-founder Jawed Karim at the San Diego Zoo",
+    "id": "melodysheep-timelapse",
+    "title": "TIMELAPSE OF THE FUTURE: A Journey to the End of Time",
+    "description": "A cinematic journey to the end of time, spanning trillions of years",
     "type": "youtube",
-    "src": "jNQXAC9IVRw"
+    "src": "uD4izuDMUQA"
   },
   {
-    "id": "big-buck-bunny-4k",
-    "title": "Big Buck Bunny",
-    "description": "A classic open-source animated comedy about a giant rabbit taking revenge on three bullying rodents",
+    "id": "cs50-lecture-0",
+    "title": "CS50 2025: Introduction to Computer Science",
+    "description": "Harvard's legendary introduction to computer science and the art of programming",
     "type": "youtube",
-    "src": "aqz-KE-bpKQ"
+    "src": "2WtPyqwTLKM"
   },
   {
-    "id": "lofi-girl-synthwave-mix",
-    "title": "Synthwave Radio",
-    "description": "A continuous stream of retro-futuristic synthwave beats perfect for gaming, coding, or relaxing",
+    "id": "posy-segments",
+    "title": "Segmented Displays",
+    "description": "A visually satisfying exploration of the design history of digital displays",
     "type": "youtube",
-    "src": "MVPTGNGiI-4"
+    "src": "RTB5XhjbgZA"
   },
   {
-    "id": "rick-roll",
-    "title": "Rick Astley - Never Gonna Give You Up",
-    "description": "The quintessential 80s music video that sparked the legendary 'Rickroll' internet meme",
+    "id": "microcosmos-tardigrades",
+    "title": "Tardigrades: The Most Resilient Animals in the Universe",
+    "description": "Stunning microscopic footage of the toughest animal on Earth: the Tardigrade",
     "type": "youtube",
-    "src": "dQw4w9WgXcQ"
+    "src": "eXBkmLzBHZk"
   },
   {
-    "id": "fireplace-10-hours",
-    "title": "Crackling Fireplace",
-    "description": "A cozy, high-definition loop of a crackling wood fire, ideal for creating a warm ambiance",
+    "id": "kurzgesagt-egg",
+    "title": "The Egg - A Short Story",
+    "description": "A beautiful, animated short story exploring the philosophy of human existence",
     "type": "youtube",
-    "src": "L_LUpnjgPso"
+    "src": "h6fcK_fRYaI"
   },
   {
-    "id": "kurzgesagt-immune-system",
-    "title": "The Immune System Explained",
-    "description": "A beautifully animated deep dive into how your body fights off bacteria and viruses",
+    "id": "lemmino-silence",
+    "title": "The Great Silence",
+    "description": "Analyzing the Fermi Paradox and why we haven't found alien life",
     "type": "youtube",
-    "src": "zQGOcOUBi6s"
+    "src": "ryg077wBvsM"
   },
   {
-    "id": "ted-talk-procrastination",
-    "title": "Inside the mind of a master procrastinator",
-    "description": "Tim Urban's hilarious and relatable TED talk about the 'Instant Gratification Monkey' inside our heads",
+    "id": "veritasium-logistic",
+    "title": "This Equation Will Change How You See the World",
+    "description": "How a simple equation governs chaos, populations, and the universe itself",
     "type": "youtube",
-    "src": "arj7oStGLkU"
+    "src": "ovJcsL7vyrk"
   },
   {
-    "id": "nature-costa-rica-4k",
-    "title": "Costa Rica in 4K",
-    "description": "Breathtaking 4K footage of Costa Rica's wildlife, from sloths to snakes, in vivid detail",
+    "id": "einzelganger-stoicism",
+    "title": "Stoicism: An Introvert's Philosophy?",
+    "description": "Exploring Stoic philosophy and how to find tranquility in a chaotic world",
     "type": "youtube",
-    "src": "iNJdPyoqt8U"
+    "src": "5ERNClS-a50"
   },
-  {
-    "id": "fireship-nextjs-13",
-    "title": "Next.js 13 in 100 Seconds",
-    "description": "A rapid-fire technical overview of the major features introduced in Next.js 13",
+{
+    "id": "solar-sands-liminal",
+    "title": "Liminal Spaces (Exploring an Altered Reality)",
+    "description": "An analysis of why empty, transitional spaces feel so eerie and familiar",
     "type": "youtube",
-    "src": "vn3tm0quoqE"
-  },
-  {
-    "id": "cyberpunk-ambience-1h",
-    "title": "Cyberpunk City Ambience",
-    "description": "Immersive futuristic cityscape visuals with rain and neon lights for focus or sleep",
-    "type": "youtube",
-    "src": "P1IcaBNhDhc"
+    "src": "N63pQGhvK4M"
   }
 ]

@@ -1,65 +1,65 @@
 [
   {
-    "id": "crash-course-cs-1",
-    "title": "Early Computing: Crash Course Computer Science",
-    "description": "Trace the origins of computing from the abacus to the Babbage Engine in this fast-paced history lesson",
+    "id": "melodysheep-timelapse",
+    "title": "TIMELAPSE OF THE FUTURE: A Journey to the End of Time",
+    "description": "A cinematic journey to the end of time, spanning trillions of years",
     "type": "youtube",
-    "src": "tpIctyqH29Q"
+    "src": "uD4izuDMUQA"
   },
   {
-    "id": "mit-algorithms-1",
-    "title": "MIT 6.006: Introduction to Algorithms",
-    "description": "The introductory lecture to MIT's famous algorithms course, covering analysis and big O notation",
+    "id": "cs50-lecture-0",
+    "title": "CS50 2025: Introduction to Computer Science",
+    "description": "Harvard's legendary introduction to computer science and the art of programming",
     "type": "youtube",
-    "src": "HtSuA80QTyo"
+    "src": "2WtPyqwTLKM"
   },
   {
-    "id": "python-beginners-course",
-    "title": "Learn Python - Full Course for Beginners",
-    "description": "A comprehensive 4-hour course from freeCodeCamp covering everything you need to start programming in Python",
+    "id": "posy-segments",
+    "title": "Segmented Displays",
+    "description": "A visually satisfying exploration of the design history of digital displays",
     "type": "youtube",
-    "src": "rfscVS0vtbw"
+    "src": "RTB5XhjbgZA"
   },
   {
-    "id": "3b1b-calculus-1",
-    "title": "The Essence of Calculus",
-    "description": "A visual and intuitive introduction to the core ideas of calculus, starting with the area of a circle",
+    "id": "microcosmos-tardigrades",
+    "title": "Tardigrades: The Most Resilient Animals in the Universe",
+    "description": "Stunning microscopic footage of the toughest animal on Earth: the Tardigrade",
     "type": "youtube",
-    "src": "WUvTyaaNkzM"
+    "src": "eXBkmLzBHZk"
   },
   {
-    "id": "study-less-study-smart",
-    "title": "Study Less Study Smart",
-    "description": "Psychology professor Marty Lobdell shares evidence-based techniques to study more effectively",
+    "id": "kurzgesagt-egg",
+    "title": "The Egg - A Short Story",
+    "description": "A beautiful, animated short story exploring the philosophy of human existence",
     "type": "youtube",
-    "src": "IlU-zDU6aQ0"
+    "src": "h6fcK_fRYaI"
   },
   {
-    "id": "stanford-biology-1",
-    "title": "Introduction to Human Behavioral Biology",
-    "description": "Robert Sapolsky's legendary introduction to the biology of human behavior and chaos theory",
+    "id": "lemmino-silence",
+    "title": "The Great Silence",
+    "description": "Analyzing the Fermi Paradox and why we haven't found alien life",
     "type": "youtube",
-    "src": "NNnIGh9g6fA"
+    "src": "ryg077wBvsM"
   },
   {
-    "id": "crash-course-history-1",
-    "title": "The Agricultural Revolution",
-    "description": "John Green explores how the invention of agriculture changed human history forever",
+    "id": "veritasium-logistic",
+    "title": "This Equation Will Change How You See the World",
+    "description": "How a simple equation governs chaos, populations, and the universe itself",
     "type": "youtube",
-    "src": "Yocja_N5s1I"
+    "src": "ovJcsL7vyrk"
   },
   {
-    "id": "kurzgesagt-fermi",
-    "title": "The Fermi Paradox",
-    "description": "An animated exploration of the probability of alien life and why we haven't found them yet",
+    "id": "einzelganger-stoicism",
+    "title": "Stoicism: An Introvert's Philosophy?",
+    "description": "Exploring Stoic philosophy and how to find tranquility in a chaotic world",
     "type": "youtube",
-    "src": "sNhhvQGsMEc"
+    "src": "5ERNClS-a50"
   },
-  {
-    "id": "domino-computer",
-    "title": "The 10,000 Domino Computer",
-    "description": "Building a working computer out of 10,000 dominoes to demonstrate how binary logic works physically",
+{
+    "id": "solar-sands-liminal",
+    "title": "Liminal Spaces (Exploring an Altered Reality)",
+    "description": "An analysis of why empty, transitional spaces feel so eerie and familiar",
     "type": "youtube",
-    "src": "OpLU__bhu2w"
+    "src": "N63pQGhvK4M"
   }
 ]

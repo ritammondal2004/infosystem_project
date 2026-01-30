@@ -102,8 +102,7 @@ export default function WatchPage() {
   const finishCalibration = () => {
     // window.webgazer.showVideoPreview(false); // Hide camera feed
     // window.webgazer.showPredictionPoints(false); // Hide dots
-    // // Resume/Start tracking logic here
-    // setViewState("PLAYING");
+    dispatch({ type: "START_PLAYING"})
   };
 
   const handleVideoEnd = () => {
