@@ -2,6 +2,16 @@
 
 import { AlertCircle, Maximize } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { 
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogCancel,
+  AlertDialogAction,
+} from "@/components/ui/alert-dialog"
 import { useState, useEffect, useRef, useReducer } from "react"
 import { Video } from "@/types"
 import VideoPlayer from "@/components/video-player"
@@ -51,6 +61,7 @@ const initialState: WatchState = {
 
 export default function WatchPage() {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [showReentryDialog, setShowReentryDialog] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -77,20 +88,8 @@ export default function WatchPage() {
   useEffect(() => {
     const handleFullscreenChange = () => {
       if (!document.fullscreenElement) {
-        if (state.status == "CALIBRATING") {
-          const confirmed = window.confirm(
-            "Fullscreen mode is required for calibration. Exiting fullscreen will cancel the calibration process. Do you want to proceed?"
-          )
-          if (confirmed) {
-            dispatch({ type: "SET_ERROR", payload: "Fullscreen mode is required for calibration. Please try again" })
-          }
-        } else if (state.status == "PLAYING") {
-          const confirmed = window.confirm(
-            "Finish the session now? Confirming will mark the session as finished"
-          )
-          if (confirmed) {
-            dispatch({ type: "END_SESSION" })
-          }
+        if (state.status === "CALIBRATING" || state.status === "PLAYING") {
+          setShowReentryDialog(true)
         }
       }
     }
@@ -133,6 +132,26 @@ export default function WatchPage() {
   const handleVideoEnd = () => {
     // window.webgazer.pause(); // Save resources
     // setViewState("SUMMARY");
+  }
+
+  const handleStopSession = () => {
+    setShowReentryDialog(false)
+    if (state.status === "CALIBRATING") {
+      dispatch({ type: "SET_ERROR", payload: "Calibration cancelled. Please refresh and try again" })
+    } else {
+      dispatch({ type: "END_SESSION" })
+    }
+  }
+
+  const handleResumeFullscreen = async () => {
+    if (containerRef.current) {
+      try {
+        await containerRef.current.requestFullscreen()
+        setShowReentryDialog(false)
+      } catch (e) {
+        console.error("Failed to re-enter fullscreen")
+      }
+    }
   }
 
   return (
@@ -184,6 +203,30 @@ export default function WatchPage() {
       )}
 
       {/* {viewState === "SUMMARY" && ()} */}
+
+      <AlertDialog open={showReentryDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>
+              <div className="font-extrabold">Fullscreen Paused</div>
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              {state.status === "CALIBRATING" 
+                ? "Calibration requires fullscreen. Resume to continue, or stop to cancel."
+                : "Playback requires fullscreen. Resume to watch, or finish the session."}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={handleStopSession}>
+              {state.status === "CALIBRATING" ? "Stop Calibration" : "Finish Session"}
+            </AlertDialogCancel>
+            
+            <AlertDialogAction onClick={handleResumeFullscreen}>
+              Resume Fullscreen
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }
