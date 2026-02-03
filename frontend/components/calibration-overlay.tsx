@@ -10,7 +10,7 @@ const CALIBRATION_POINTS = [
   { x: 5, y: 95 }, { x: 50, y: 95 }, { x: 95, y: 95 },
 ]
 
-const CLICKS_REQUIRED = 1
+const CLICKS_REQUIRED = 5
 
 interface CalibrationOverlayProps {
   onComplete: () => void
@@ -19,7 +19,7 @@ interface CalibrationOverlayProps {
 
 export default function CalibrationOverlay({ onComplete, onCancel }: CalibrationOverlayProps) {
   const [clickCounts, setClickCounts] = useState<number[]>(new Array(9).fill(0))
-
+ 
   useEffect(() => {
     if (clickCounts.every((count) => count >= CLICKS_REQUIRED)) {
       const timer = setTimeout(() => {
@@ -92,7 +92,7 @@ export default function CalibrationOverlay({ onComplete, onCancel }: Calibration
         
         let colorClass = "bg-destructive ring-destructive/30"
         if (isComplete) {
-            colorClass = "bg-primary ring-primary/30"
+            colorClass = "bg-primary ring-primary"
         } else if (clicks > 0) {
             colorClass = "bg-chart-1 ring-chart-1/30"
         }

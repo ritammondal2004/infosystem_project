@@ -64,6 +64,8 @@ export default function WatchPage() {
   const [showReentryDialog, setShowReentryDialog] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
+  const videoContainer = document.getElementById("webgazerVideoContainer")
+
   useEffect(() => {
     const fetchVideo = async () => {
       try {
@@ -100,7 +102,6 @@ export default function WatchPage() {
   }, [state.status])
 
   useEffect(() => {    
-    const videoContainer = document.getElementById("webgazerVideoContainer")
     const slot = document.getElementById("video-preview-slot")
     const video = document.getElementById("webgazerVideoFeed")
 
@@ -116,16 +117,25 @@ export default function WatchPage() {
       videoContainer.style.border = "2px solid hsl(var(--border))"
       videoContainer.style.transform = "scale(1.5)"
       video.disablePictureInPicture = true;
-    } else if (videoContainer && state.status !== "IDLE") {
-      webgazer.showVideo(false)
     }
   }, [state.status])
 
   const enterFullscreenAndStart = async () => {
     if (!containerRef.current) return
+    const gazeDot = document.getElementById("webgazerGazeDot")
 
     try {
+      containerRef.current.appendChild(gazeDot!)
       await containerRef.current.requestFullscreen()
+      if (!videoContainer)
+        throw new Error("Critical Error: Video Stream Lost")
+
+      document.body.appendChild(videoContainer)
+      videoContainer.style.position = "fixed"
+      videoContainer.style.top = "0px"
+      videoContainer.style.left = "0px"
+      videoContainer.style.transform = "scale(1)"
+      webgazer.showVideo(false)
 
       dispatch({ type: "START_CALIBRATION" })
     } catch (err) {
@@ -134,15 +144,10 @@ export default function WatchPage() {
     }
   }
 
-  const handleScriptLoad = () => {
-    // // Initialize WebGazer hidden
-    // window.webgazer.setRegression('ridge').setTracker('TFFacemesh').begin();
-    // window.webgazer.showVideoPreview(true); // Show only during calibration
-  };
-
   const finishCalibration = () => {
-    // window.webgazer.showVideoPreview(false); // Hide camera feed
-    // window.webgazer.showPredictionPoints(false); // Hide dots
+    webgazer.setGazeListener((data: any, elapsedTime: any) => {
+      console.log(data, elapsedTime)
+    })
     dispatch({ type: "START_PLAYING"})
   };
 
@@ -153,6 +158,7 @@ export default function WatchPage() {
 
   const handleStopSession = () => {
     setShowReentryDialog(false)
+    webgazer.showPredictionPoints(false)
     if (state.status === "CALIBRATING") {
       dispatch({ type: "SET_ERROR", payload: "Calibration cancelled. Please refresh and try again" })
     } else {
