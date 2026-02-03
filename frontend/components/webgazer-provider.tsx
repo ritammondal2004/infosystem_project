@@ -7,6 +7,7 @@ export default function WebgazerProvider() {
     webgazer.saveDataAcrossSessions(false)
       .showVideo(false)
       .showPredictionPoints(false)
+      .begin()
   }
 
   return (

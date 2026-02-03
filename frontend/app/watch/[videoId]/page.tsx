@@ -1,7 +1,6 @@
 "use client"
 
-import { AlertCircle, Maximize } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { AlertCircle } from "lucide-react"
 import { 
   AlertDialog,
   AlertDialogContent,
@@ -15,6 +14,7 @@ import {
 import { useState, useEffect, useRef, useReducer } from "react"
 import { Video } from "@/types"
 import VideoPlayer from "@/components/video-player"
+import IdleScreen from "@/components/idle-screen"
 import CalibrationOverlay from "@/components/calibration-overlay"
 
 type WatchState = {
@@ -71,6 +71,7 @@ export default function WatchPage() {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/videos/${videoId}`)
         if (response.ok) {
           const video = await response.json()
+          webgazer.showVideo(true).showPredictionPoints(true)
           dispatch({ type: "LOAD_SUCCESS", payload: video })
         } else {
           console.error("Failed to fetch video")
@@ -96,6 +97,28 @@ export default function WatchPage() {
 
     document.addEventListener("fullscreenchange", handleFullscreenChange)
     return () => document.removeEventListener("fullscreenchange", handleFullscreenChange)
+  }, [state.status])
+
+  useEffect(() => {    
+    const videoContainer = document.getElementById("webgazerVideoContainer")
+    const slot = document.getElementById("video-preview-slot")
+    const video = document.getElementById("webgazerVideoFeed")
+
+    if (videoContainer && video &&  slot && state.status === "IDLE") {
+      slot.appendChild(videoContainer)
+      
+      videoContainer.style.position = "relative" 
+      videoContainer.style.top = "auto"
+      videoContainer.style.left = "auto"
+      videoContainer.style.margin = "0"
+      videoContainer.style.borderRadius = "1rem"
+      videoContainer.style.overflow = "hidden"
+      videoContainer.style.border = "2px solid hsl(var(--border))"
+      videoContainer.style.transform = "scale(1.5)"
+      video.disablePictureInPicture = true;
+    } else if (videoContainer && state.status !== "IDLE") {
+      webgazer.showVideo(false)
+    }
   }, [state.status])
 
   const enterFullscreenAndStart = async () => {
@@ -151,18 +174,7 @@ export default function WatchPage() {
   return (
     <div ref={containerRef} className="bg-background">
       {state.status === "IDLE" && (
-        <div className="flex-1 w-full flex flex-col items-center justify-center space-y-6 p-80">
-          <h1 className="text-3xl font-bold">Ready to Start?</h1>
-          <p className="text-muted-foreground max-w-md text-center font-medium">
-            This session requires fullscreen mode for accurate eye tracking.
-            Please sit comfortably and ensure your face is well-lit.
-          </p>
-          
-          <Button onClick={enterFullscreenAndStart} className="gap-2 font-bold px-10 py-5">
-              <Maximize className="w-5 h-5" />
-              Enter Fullscreen & Start
-          </Button>
-        </div>
+        <IdleScreen onStart={enterFullscreenAndStart} />
       )}
 
       {state.status === "LOADING" &&
