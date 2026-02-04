@@ -73,14 +73,16 @@ export default function WatchPage() {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/videos/${videoId}`)
         if (response.ok) {
           const video = await response.json()
-          webgazer.showVideo(true).showPredictionPoints(true)
+          await webgazer.showVideo(true).begin()
           dispatch({ type: "LOAD_SUCCESS", payload: video })
         } else {
           console.error("Failed to fetch video")
+          webgazer.end()
           dispatch({ type: "LOAD_FAIL", payload: "Unable to fetch content" })
         }
       } catch (error) {
         console.error("Error fetching video:", error)
+        webgazer.end()
         dispatch({ type: "LOAD_FAIL", payload: "An error occurred while fetching content" })
       }
     };
@@ -116,12 +118,12 @@ export default function WatchPage() {
       videoContainer.style.overflow = "hidden"
       videoContainer.style.border = "2px solid hsl(var(--border))"
       videoContainer.style.transform = "scale(1.5)"
-      video.disablePictureInPicture = true;
     }
   }, [state.status])
 
   const enterFullscreenAndStart = async () => {
     if (!containerRef.current) return
+    webgazer.showPredictionPoints(true)
     const gazeDot = document.getElementById("webgazerGazeDot")
 
     try {
@@ -140,14 +142,12 @@ export default function WatchPage() {
       dispatch({ type: "START_CALIBRATION" })
     } catch (err) {
       console.warn("Fullscreen denied:", err)
+      webgazer.end()
       dispatch({ type: "SET_ERROR", payload: "Fullscreen is required to proceed. Please allow fullscreen access" })
     }
   }
 
   const finishCalibration = () => {
-    webgazer.setGazeListener((data: any, elapsedTime: any) => {
-      console.log(data, elapsedTime)
-    })
     dispatch({ type: "START_PLAYING"})
   };
 
@@ -158,7 +158,7 @@ export default function WatchPage() {
 
   const handleStopSession = () => {
     setShowReentryDialog(false)
-    webgazer.showPredictionPoints(false)
+    webgazer.showPredictionPoints(false).end()
     if (state.status === "CALIBRATING") {
       dispatch({ type: "SET_ERROR", payload: "Calibration cancelled. Please refresh and try again" })
     } else {
