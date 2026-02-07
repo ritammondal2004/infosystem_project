@@ -1,8 +1,11 @@
 import os
 import json
 import logging
+from dotenv import load_dotenv
 from flask import Flask, jsonify
 from flask_cors import CORS
+
+load_dotenv()
 
 app = Flask(__name__)
 allowed_origins = os.getenv(
