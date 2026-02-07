@@ -5,10 +5,9 @@ import { Video } from "@/types"
 
 interface VideoPlayerProps {
   video: Video | null
-  onEnded: () => void
 }
 
-export default function VideoPlayer({ video, onEnded }: VideoPlayerProps) {
+export default function VideoPlayer({ video }: VideoPlayerProps) {
   const gazeDataRef = useRef<Array<{ x: number; y: number; timestamp: number }>>([])
 
   useEffect(() => {
@@ -74,7 +73,6 @@ export default function VideoPlayer({ video, onEnded }: VideoPlayerProps) {
           controls
           autoPlay
           className="h-full w-full"
-          onEnded={onEnded}
           poster={video.meta.thumbnail_url || undefined}
         >
           <source src={video.meta.cdn_url} type={video.meta.mime_type} />

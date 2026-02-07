@@ -123,7 +123,8 @@ export default function WatchPage() {
 
   const enterFullscreenAndStart = async () => {
     if (!containerRef.current) return
-    webgazer.showPredictionPoints(true)
+    if (process.env.NEXT_PUBLIC_SHOW_PREDICTION_DOT == "true")
+      webgazer.showPredictionPoints(true)
     const gazeDot = document.getElementById("webgazerGazeDot")
 
     try {
@@ -150,11 +151,6 @@ export default function WatchPage() {
   const finishCalibration = () => {
     dispatch({ type: "START_PLAYING"})
   };
-
-  const handleVideoEnd = () => {
-    // window.webgazer.pause(); // Save resources
-    // setViewState("SUMMARY");
-  }
 
   const handleStopSession = () => {
     setShowReentryDialog(false)
@@ -208,7 +204,7 @@ export default function WatchPage() {
 
       {state.status === "PLAYING" && (
         <div className="container mx-auto">
-          <VideoPlayer video={state.video} onEnded={handleVideoEnd} />
+          <VideoPlayer video={state.video} />
         </div>
       )}
 
