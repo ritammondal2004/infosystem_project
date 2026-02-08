@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
+from config import SMOOTHING_WINDOW
 
-SMOOTHING_WINDOW = 5
 
 def preprocess_gaze_data(json_data):
     """
