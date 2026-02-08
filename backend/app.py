@@ -3,6 +3,12 @@ import json
 import logging
 from flask import Flask, jsonify
 from flask_cors import CORS
+from flask import request
+from analytics.preprocessing import preprocess_gaze_data
+from analytics.attention import attention_metrics
+from analytics.metrics import compute_all_metrics
+from analytics.plots import generate_plots
+
 
 app = Flask(__name__)
 CORS(app)
@@ -62,6 +68,32 @@ def get_video(video_id):
         if video.get('id') == video_id:
             return jsonify(format_video(video))
     return jsonify({"error": "Video not found"}), 404
+
+@app.route("/api/analyze", methods=["POST"])
+def analyze_gaze_session(): 
+    try:
+        payload = request.json
+        gaze_data = payload.get("gaze_data", [])
+
+        if not gaze_data:
+            return jsonify({"error": "No gaze data provided"}), 400
+
+        # --- Analytics Pipeline ---
+        df = preprocess_gaze_data(gaze_data)
+
+        metrics = compute_all_metrics(df)
+        plots = generate_plots(df)
+
+        return jsonify({
+            "status": "success",
+            "metrics": metrics,
+            "plots": plots
+        })
+
+    except Exception as e:
+        logging.error(f"Analytics error: {e}")
+        return jsonify({"error": "Internal Server Error"}), 500
+
 
 if __name__ == "__main__":
     # TODO: Run this in a WSGI server for prod
