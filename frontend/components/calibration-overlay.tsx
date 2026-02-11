@@ -10,7 +10,7 @@ const CALIBRATION_POINTS = [
   { x: 5, y: 95 }, { x: 50, y: 95 }, { x: 95, y: 95 },
 ]
 
-const CLICKS_REQUIRED = 1
+const CLICKS_REQUIRED = 3
 
 interface CalibrationOverlayProps {
   onComplete: () => void
