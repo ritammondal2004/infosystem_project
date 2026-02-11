@@ -114,7 +114,7 @@ export default function AnalysisDashboard({ result }: AnalysisDashboardProps) {
         {/* Visualizations */}
         <div className="space-y-6">
           <h2 className="text-2xl font-bold">Visualizations</h2>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Heatmap */}
             {plots.heatmap && (
@@ -160,25 +160,47 @@ export default function AnalysisDashboard({ result }: AnalysisDashboardProps) {
           </div>
 
           {/* Time Series */}
-          {plots.x_time_series && (
-            <Card className="overflow-hidden">
-              <CardHeader>
-                <CardTitle className="text-lg">X Coordinate Time Series</CardTitle>
-                <CardDescription>
-                  Horizontal gaze position over time during the session
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-muted rounded-lg overflow-auto">
-                  <img
-                    src={`data:image/png;base64,${plots.x_time_series}`}
-                    alt="X Time Series"
-                    className="w-full h-auto"
-                  />
-                </div>
-              </CardContent>
-            </Card>
-          )}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {plots.x_time_series && (
+              <Card className="overflow-hidden">
+                <CardHeader>
+                  <CardTitle className="text-lg">X Coordinate Time Series</CardTitle>
+                  <CardDescription>
+                    Horizontal gaze position over time during the session
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-muted rounded-lg overflow-auto">
+                    <img
+                      src={`data:image/png;base64,${plots.x_time_series}`}
+                      alt="X Time Series"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {plots.y_time_series && (
+              <Card className="overflow-hidden">
+                <CardHeader>
+                  <CardTitle className="text-lg">Y Coordinate Time Series</CardTitle>
+                  <CardDescription>
+                    Vertical gaze position over time during the session
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-muted rounded-lg overflow-auto">
+                    <img
+                      src={`data:image/png;base64,${plots.y_time_series}`}
+                      alt="Y Time Series"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+          </div>
         </div>
       </div>
     </div>
